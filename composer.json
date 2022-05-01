@@ -1,0 +1,20 @@
+{
+    "name": "usualtool/ut-scan",
+    "description": "UT framework scanning vulnerability extension.",
+    "keywords": ["ut-scan", "usualtool", "UT Framework"],
+    "homepage": "http://frame.usualtool.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+        "name":  "HuangDou",
+        "email": "292951110@qq.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "usualtool\\Scan\\": "src"
+        }
+    }
+}
