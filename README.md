@@ -1,6 +1,6 @@
 # ut-scan
 UT framework scanning vulnerability extension.
-<?php
+
 require_once dirname(__FILE__).'/'.'autoload.php';
 use usualtool\Scan\Scan;
 $scan=new Scan();
