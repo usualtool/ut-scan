@@ -2,12 +2,12 @@
     "name": "usualtool/ut-scan",
     "description": "UT framework scanning vulnerability extension.",
     "keywords": ["ut-scan", "usualtool", "UT Framework"],
-    "homepage": "http://frame.usualtool.com",
+    "homepage": "https://github.com/usualtool",
     "license": "Apache-2.0",
     "authors": [
         {
-        "name":  "HuangDou",
-        "email": "292951110@qq.com"
+        "name":  "Huang Hui",
+        "email": "usualtool@qq.com"
         }
     ],
     "require": {
@@ -17,4 +17,5 @@
             "usualtool\\Scan\\": "src"
         }
     }
+
 }
