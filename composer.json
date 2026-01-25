@@ -1,6 +1,6 @@
 {
     "name": "usualtool/ut-scan",
-    "description": "UT framework scanning vulnerability extension.",
+    "description": "UT Framework scanning vulnerability extension.",
     "keywords": ["ut-scan", "usualtool", "UT Framework"],
     "homepage": "https://github.com/usualtool",
     "license": "Apache-2.0",
@@ -19,3 +19,4 @@
     }
 
 }
+
