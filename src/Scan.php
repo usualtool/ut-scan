@@ -1,6 +1,10 @@
 <?php
 namespace usualtool\Scan;
 class Scan{
+	public $count=0;
+	public $scanned=0;
+	public $list=array();
+	public $features=[];
 	public function __construct(){
 		$this->count=0;
 		$this->scanned=0;
@@ -16,8 +20,8 @@ class Scan{
 		'Back door->SECFORCE'=>'SECFORCE',
 		'Hazard function->eval("?>'=>'eval\((\'|")\?>',
 		'Hazard function->copy('=>'copy\($_FILES',
-		'Hazard function->eval_r(gzinflate'=>'eval_r\(gzinflate(',
-		'Hazard function->eval_r(base64'=>'eval_r\(base64_decode(',
+		'Hazard function->eval_r(gzinflate'=>'eval_r\(gzinflate\(',
+		'Hazard function->eval_r(base64'=>'eval_r\(base64_decode\(',
 		'Hazard function->system('=>'system\(',
 		'Hazard function->passthru('=>'passthru\(',
 		'Hazard function->shell_exec('=>'shell_exec\(',
@@ -58,12 +62,13 @@ class Scan{
         $ignore = array('.', '..' );
         $replace=array(" ","\n","\r","\t");
         $dh = @opendir($path);
+		if(!$dh) return $this->list;
         while(false!==($file=readdir($dh))){
             if(!in_array($file,$ignore)){                 
                 if(is_dir($path."/".$file)){
                 $this->Scan($path."/".$file."/",$is_ext);            
                 }else{
-                    $current = $path.$file;
+                    $current = rtrim($path,'/')."/".$file;
 					$current = str_replace("//","/",$current);
                     if(!preg_match("/$is_ext/i",$file)) continue;
                     if(is_readable($current) && strpos($current,'usualtool/ut-scan')===false && strpos($current,'library/UsualTool')===false){
